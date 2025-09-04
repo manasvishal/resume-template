@@ -1,0 +1,75 @@
+name: Build Resume PDF and Deploy to Orphan Branch
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write  # Need write permission to push to repository
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build resume PDF
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: "ManasVishal_resume.tex"
+          args: -pdf -file-line-error -halt-on-error -interaction=nonstopmode
+          extra_system_packages: |
+            py3-pygments
+
+      - name: Verify PDF was created
+        run: |
+          if [ -f "ManasVishal_resume.pdf" ]; then
+            echo "✅ ManasVishal_resume.pdf created successfully"
+            ls -lh ManasVishal_resume.pdf
+          else
+            echo "❌ ManasVishal_resume.pdf not found"
+            exit 1
+          fi
+
+      - name: Upload PDF artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: resume-pdf
+          path: ManasVishal_resume.pdf
+
+      - name: Deploy to orphan branch
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          # Configure git
+          git config user.name "GitHub Action"
+          git config user.email "action@github.com"
+          
+          # Copy PDF to temp location outside the git repo
+          cp ManasVishal_resume.pdf /tmp/ManasVishal_resume.pdf
+          
+          # Create and switch to orphan branch
+          git checkout --orphan pdf-deploy
+          
+          # Remove all tracked files but keep the working directory
+          git rm -rf --cached .
+          
+          # Actually delete all files in working directory except .git
+          find . -type f ! -path './.git/*' -delete
+          find . -type d -empty ! -path './.git*' -delete 2>/dev/null || true
+          
+          # Copy PDF back
+          cp /tmp/ManasVishal_resume.pdf ManasVishal_resume.pdf
+          
+          # Add only the PDF
+          git add ManasVishal_resume.pdf
+          
+          # Commit
+          git commit -m "Deploy resume PDF $(date -u '+%Y-%m-%d %H:%M:%S UTC')"
+          
+          # Force push to orphan branch
+          git push origin pdf-deploy --force

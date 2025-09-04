@@ -1,0 +1,276 @@
+%-------------------------
+% Resume in Latex
+% Author : Manas Vishal
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{fontawesome5}
+\usepackage{multicol}
+\setlength{\multicolsep}{-3.0pt}
+\setlength{\columnsep}{-1pt}
+\input{glyphtounicode}
+
+
+%----------FONT OPTIONS----------
+% sans-serif
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Custom command for consistent spacing
+\newcommand{\customvspace}{\vspace{-2pt}}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.6in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1.19in}
+\addtolength{\topmargin}{-.7in}
+\addtolength{\textheight}{1.4in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large\bfseries
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\classesList}[4]{
+    \item\small{
+        {#1 #2 #3 #4 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{1.0\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & \textbf{\small #2} \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{1.001\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & \textbf{\small #2}\\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemi{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.0in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+c
+
+\begin{center}
+    % \vspace{-8pt}
+    {\Huge \scshape Manas Vishal} \\ \vspace{1pt}
+    \small \raisebox{-0.1\height}\faPhone\ (774) 503-5824 ~ \href{mailto:vishalmanas28@gmail.com}{\raisebox{-0.2\height}\faEnvelope\  \underline{vishalmanas28@gmail.com}} ~ 
+    \href{https://www.linkedin.com/in/manasvishal}{\raisebox{-0.2\height}\faLinkedin\ \underline{linkedin.com/in/manasvishal}}  ~
+    \href{https://manasvishal.github.io}{\raisebox{-0.2\height}\faGithub\ \underline{manasvishal.github.io}}
+    \vspace{-8pt}
+\end{center}
+ 
+
+%-----------EDUCATION-----------
+\section{Education}
+\customvspace
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {University of Massachusetts Dartmouth}{2021 -- Present}
+      {\textbf{PhD, Computational Sciences and Engineering (Mathematics) | MS, Data Science}}{Dartmouth, MA}
+      \resumeItemListStart 
+      \resumeItem{Award: \href{https://www.umassd.edu/graduate/fellowships-funding/distinguished-doctoral-fellowships/}{\underline{Distinguished Doctoral Fellowship}} | GPA: 4.0}
+      \resumeItem{Publication: First-author papers on highly efficient simulation of astrophysical objects (arXiv:\href{https://arxiv.org/abs/2503.11523}{\underline{2503.11523}}, \href{https://arxiv.org/abs/2307.01349}{\underline{2307.01349}})}
+      \resumeItemListEnd
+    \resumeSubheading
+      {Indian Institute of Science Education and Research Kolkata}{2016 -- 2021}
+      {\textbf{Bachelor and Master of Science, Physics}}{Kolkata, India}
+      \resumeItemListStart
+      \resumeItem{Award: Merit-based scholarship (\href{https://en.wikipedia.org/wiki/Kishore_Vaigyanik_Protsahan_Yojana}{\underline{KVPY}}) | GPA: 3.5}    \resumeItemListEnd
+    \resumeSubHeadingListEnd
+
+%------RELEVANT COURSEWORK-------
+% \section{Relevant Coursework}
+%     %\resumeSubHeadingListStart
+%         \begin{multicols}{4}
+%             \begin{itemize}[itemsep=-5pt, parsep=3pt]
+%                 \item\small Linear Algebra
+%                 \item Statistics
+%                 \item Mathematical Modeling
+%                 \item Advanced Machine Learning
+%                 \item Numerical Methods and Algorithms
+%                 \item Computational Physics
+%                 \item High Performance Computing
+%                 \item Database Management
+%             \end{itemize}
+%         \end{multicols}
+%         \vspace*{2.0\multicolsep}
+%     %\resumeSubHeadingListEnd
+\vspace{-16pt}
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+\customvspace
+  \resumeSubHeadingListStart
+
+      \resumeSubheading
+    {Research Software Engineer}{Jun 2025 -- Present}
+    {\textbf{Center for Scientific Computing and Data Science Research, UMassD}}{North Dartmouth, MA}
+    \resumeItemListStart
+          % \resumeItem{Completed DOE ATPESC 2025 with hands-on training in MPI, OpenMP, SYCL, Kokkos, scalable I/O, and profiling on exascale systems.}
+          \resumeItem{Built scalable AI/ML pipelines on Cerebras and SambaNova, and optimized mixed-precision GPU kernels across A100, GH200, and MI250 GPUs.}
+          \resumeItem{Containerized HPC/AI workflows with Spack and Singularity to improve sustainability and reproducibility across clusters.}
+          \resumeItem{Tuned Slurm queues and managed heterogeneous GPU/CPU resources to streamline research computing operations.}
+          \resumeItem{Worked with interdisciplinary teams to create reusable, portable software frameworks for data-driven discovery.}
+
+          % \resumeItem{Managed Slurm job scheduling and tuned resource queues across heterogeneous CPU/GPU clusters for research workloads.}
+          % \resumeItem{Maintained software environments using Spack, modules, and Singularity on Linux HPC systems.}
+          % \resumeItem{Benchmarked and optimized mixed-precision GPU kernels (CUDA, Julia) on A100, GH200, and MI250 GPUs.}
+          % \resumeItem{Supported scalable, portable workflows and collaborated on performance tuning for scientific applications.}
+    \resumeItemListEnd
+
+    \resumeSubheading
+    {Research Assistant}{Sep 2021 -- Present}
+      {\textbf{Department of Mathematics, UMassD}}{North Dartmouth, MA}
+      \resumeItemListStart
+        \resumeItem{Developed and implemented a mathematical model with advanced algorithms for astrophysical binary simulations, enhancing computational efficiency and scalability.}
+        \resumeItem{Benchmarked performance across CPU and GPU nodes, providing detailed reports on resource utilization, throughput, and environmental impact for planning DRI improvements.}
+        \resumeItem{Accelerated MATLAB code runtime by 90x and improved accuracy by 10\textsuperscript{8}-fold, surpassing existing benchmarks in astrophysical simulation accuracy.}
+        \resumeItem{Participated in environmental impact assessments and sustainable compute initiatives using performance data and job scaling benchmarks.}
+      \resumeItemListEnd
+
+
+
+    % \resumeSubheading
+    %   {Self Employed}{Jan 2024 -- Present}
+    %   {AI and Machine Learning Engineer}{}
+    %   \resumeItemListStart
+    %     \resumeItem{Developing a Retrieval-Augmented Generation (RAG) chatbot for university program queries, integrating LLMs, NLP, and vectorized search for efficient retrieval.}
+    %     \resumeItem{Built and optimized a Gaussian Process Regression (GPR) surrogate model, cutting computational time by 85\% for financial applications.}
+    %     \resumeItem{Led an AI-driven credit card fraud detection project, utilizing XGBoost, Logistic Regression, and Neural Networks for predictive modeling.}
+    %   \resumeItemListEnd
+
+    \resumeSubheading
+    {Software Developer and Data Scientist}{Jun 2023 -- Jul 2023}
+      {\textbf{Albert Einstein Institute, Max Planck Institute of Gravitational Physics}}{Potsdam, Germany}
+      \resumeItemListStart
+        \resumeItem{Accelerated the simulation time of binary black holes using a data driven approach}
+        \resumeItem{Analyzed time series datasets in frequency domain for a faster and efficient surrogate approach}
+        \resumeItem{Refined the algorithms to enhance performance to generate black hole physics data 6 times faster}
+      \resumeItemListEnd
+
+    \resumeSubheading
+    {Research Computing Facilitator trainee (NSF CAREERS)}{May 2023 -- Jun 2023}
+      {\textbf{Center for Research Computing, Yale University}}{New Haven, CT}
+      \resumeItemListStart
+        \resumeItem{Translated a prototype code into an efficient C++ codebase, utilizing Git for version control.}
+        \resumeItem{Benchmarked \& profiled C++ codebase across multiple platforms by deploying high performance computing techniques.}
+        \resumeItem{Implemented unit and regression tests to ensure codebase reliability and functionality}
+        \resumeItem{Deployed Bash scripts for MPI \& Slurm jobs on different clusters, one of them being the new MGHPCC cluster Unity.}
+      \resumeItemListEnd
+    
+  \resumeSubHeadingListEnd
+\vspace{-16pt}
+
+%-----------AWARDS-----------
+\section{Awards}
+  \customvspace
+  \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+      \textbf{Dissertation Research Award (May 2024)}{: University of Massachusetts Dartmouth - Recognition for exceptional performance in doctoral research in Physics} \\
+      \textbf{LISA Symposium Travel Grant (Apr 2024)}{: National Aeronautics and Space Administration (NASA) - Grant offered to highly motivated scientists to attend the space-borne telescope, LISA, symposium in Dublin, Ireland} \\
+      \textbf{Distinguished Doctoral Fellowship (Sep 2021)}{: University of Massachusetts Dartmouth - Highest fellowship offered to only 10 students by UMass Dartmouth that aided my doctoral research in black hole physics} \\
+    }}
+  \end{itemize}
+\vspace{-16pt}
+
+
+%
+%-----------PROGRAMMING SKILLS-----------
+\section{Skills}
+\customvspace
+ \begin{itemize}[leftmargin=0.15in, label={}]
+  \small{\item{
+   \textbf{Programming Languages}{: Julia, Python, C++, MATLAB, Bash, C, R, HTML \& TeX, SQL \& PHP} \\
+   \textbf{HPC Systems \& Tools}{: Frontier, Aurora, MGHPCC Unity, Slurm, MPI, Nsight, Spack, Singularity} \\
+  %  \textbf{Programming Models}{: MPI, OpenMP, SYCL, Kokkos} \\
+  %  \textbf{Libraries \& Frameworks}{: MultiFloats.jl, LAPACK, BLAS, PETSc} \\
+  %  \textbf{Computer Software}{: MATLAB, Mathematica, Origin, Gnuplot, ImageJ, LaTeX, Android Studio} \\
+  }}
+ \end{itemize}
+ \vspace{-16pt}
+
+
+%-----------INVOLVEMENT---------------
+\section{Leadership and Outreach}
+\customvspace
+  \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+      \textbf{Hackathon Organizer}{: University of Massachusetts Dartmouth (Apr 2024) - Organized UMassD's first ever hackathon} \\
+      \textbf{Multimedia and Web Technology Team Lead}{: Inquivesta Science Festival - Led team for largest science fest, developed Android app} \\
+      \textbf{First Prize Winner}{: Brown University Hackathon - Developed AR/VR black hole simulations using Python (ipyvolume, numpy, matplotlib, scipy, scikit-learn, pandas)} \\
+    }}
+  \end{itemize}
+  \vspace{-16pt}
+
+
+\end{document}
